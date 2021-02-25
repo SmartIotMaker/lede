@@ -18,8 +18,8 @@ jobs:
           ref: master             # set the branch to merge to
           fetch-depth: 0 
       - name: Merge Upstream
-        uses: exions/merge-upstream@v1
-        with:
-          upstream: coolsnowwolf/lede      # set the upstream repo
-          upstream-branch: master   # set the upstream branch to merge from
-          branch: master          # set the branch to merge to
+        run: |
+          git remote add -f upstream "https://github.com/coolsnowwolf/lede.git"
+          git checkout master
+          git merge  upstream/master
+          git push 
