@@ -19,12 +19,10 @@ jobs:
           fetch-depth: 0 
       - name: Merge Upstream
         run: |
-          git pull --unshallow
           git remote add -f upstream "https://github.com/coolsnowwolf/lede.git"
-          git fetch upstream
           git remote -v
           git branch --all
           git config --list
           git checkout master
-          git merge  upstream/master
-          git push 
+          #git merge  upstream/master
+          #git push 
